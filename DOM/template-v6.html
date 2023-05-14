@@ -1,1 +1,23 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="v6">
+    <p v-once>{{ frase }}</p>
+    <p>{{ repeat() }}</p>
+    <a v-bind:href="link" target="_blank">Link</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#V6',
+        data:{
+            frase: 'Primeira do dia 14/05',
+            link: 'https://www.google.com.br/'
+        },
+        methods:{
+            repeat(){
+                this.frase = 'Primeir teste do dia'
+                return this.frase
+            }
+        }
+    })
+</script>
