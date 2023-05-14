@@ -1,0 +1,22 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="v3">
+    <p>{{ content }}</p>
+    <p>{{ content2() }}</p>
+</div>
+
+<script>
+    new Vue(
+        {
+            el: '#v3',
+            data:{
+                content:'Teste'
+            },
+            methods:{
+                content2:function(){
+                    return this.content
+                }
+            }
+        }
+    )
+</script>

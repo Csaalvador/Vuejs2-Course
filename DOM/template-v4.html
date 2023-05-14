@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="v4">
+    <p>{{ frase }}</p>
+    <p>{{ funcao() }}</p>
+    <a v-bind:href="link">Link</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#v4',
+        data: {
+            frase: 'Bia linda',
+            link: 'https://www.youtube.com/watch?v=Ywq6FMLbWH4'
+
+        },
+        methods: {
+            funcao: function () {
+                return this.frase
+            }
+        }
+    })
+</script>
