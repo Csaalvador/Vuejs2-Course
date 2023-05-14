@@ -1,0 +1,15 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="v1">
+    <p> {{ oracao }} </p>
+    <input type="text" name="" v-model="oracao">
+</div>
+
+<script>
+    new Vue({
+        el: '#v1',
+        data:{
+            oracao: 'Olá mundo'
+        }
+    })
+</script>

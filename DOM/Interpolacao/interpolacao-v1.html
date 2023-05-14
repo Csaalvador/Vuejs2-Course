@@ -1,0 +1,21 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="box">
+    <p v-bild="Soma"></p>
+    <p v-bild="Soma">{{ Soma }} {{ Soma > 10 ?  'Olá mundo' : 'Hello World' }}</p>
+    <button v-on:click="somar">Somar</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#box',
+        data:{
+            Soma: 0
+        },
+        methods:{
+            somar:function(event) {
+                this.Soma++
+            }
+        }
+    })
+</script>

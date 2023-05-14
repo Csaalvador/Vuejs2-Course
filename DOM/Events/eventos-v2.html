@@ -3,7 +3,7 @@
 <div class="v2">
     <p>{{ count }}</p>
     
-    <button v-on:click="somar">Somar</button>
+    <button v-on:click="somar(5)">Somar</button>
     
     <p v-on:mousemove="mouse">Mouse: {{ x }} e {{ y }}</p>
 </div>
@@ -17,8 +17,8 @@
             y: 0
         },
         methods:{
-            somar:function() {
-                this.count++
+            somar:function(passo) {
+                this.count+=passo
             },
             mouse(event){
                 this.x = event.clientX

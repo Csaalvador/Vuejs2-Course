@@ -1,0 +1,35 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="v4">
+    <p>{{ soma }}</p>
+    <button v-on:click="somar(5)">Somar</button>
+    <p v-on:mousemove="mouse">
+        Mouse: {{ x }} e {{ y }}
+        <span v-on:mousemove="stop">PARAR AQUI</span><br>
+        <span v-on:mousemove.stop>PARAR AQUI</span>
+
+    </p>
+</div>
+
+<script>
+    new Vue({
+        el: '#v4',
+        data:{
+            soma: 0,
+            x: 0,
+            y: 0
+        },
+        methods:{
+            somar:function(passo){
+                this.soma+=passo
+            },
+            mouse:function(event){
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+            stop:function(event){
+                event.stopPropagation()
+            }
+        }
+    })
+</script>
