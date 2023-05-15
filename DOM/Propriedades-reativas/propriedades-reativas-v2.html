@@ -1,0 +1,44 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p>Contador: {{ contador }} | {{ contador2 }}</p>
+    <button v-on:click="aumentar2">Aumentar 2</button>
+    <button v-on:click="aumentar">Aumentar</button>
+    <button v-on:click="diminuir">Diminuir</button>
+    <p>Resultado: {{ resultado }}</p>
+    <p>Resultador2: {{ resultado2 }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            contador2: 0,
+        },
+        computed: {
+            resultado:function () {
+                console.log('Bia linda ein');
+                return this.contador >= 5 ?
+                    'Maior que 5' : 'Menor que 5'
+            },
+            resultado2:function () {
+                return this.contador2 >= 5 ?
+                    'Maior que 5' : 'Menor que 5'
+            }
+
+        },
+        methods: {
+            aumentar: function (event) {
+                this.contador++
+            },
+            diminuir: function (event) {
+                this.contador--
+            },
+
+            aumentar2: function (event) {
+                this.contador2 += 2
+            }
+        }
+    });
+</script>
